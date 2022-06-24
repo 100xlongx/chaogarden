@@ -11,8 +11,12 @@ def main() -> None:
         console = tcod.Console(screen_width, screen_height, order = 'F')
 
         while True:
+            console.clear()
+            console.print(x=0, y=0, string="Hello World!")
             context.present(console)
 
+            for events in tcod.event.wait():
+                context.convert_event(events)
 
 
 if __name__ == "__main__":
